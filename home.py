@@ -17,8 +17,8 @@ def home():
 		<ul>
 	"""
 	for city in city_names:
-		code = code + "<li>" + city + "<li>"
-		code = code + """</ul> </body>"""
+		code = code + "<li>" + city # + "<li>"
+#		code = code + """</ul> </body>"""
 	return code
 
 @myapp_obj.route("/hello")
