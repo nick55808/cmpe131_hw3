@@ -1,8 +1,9 @@
 from flask import Flask
 from flask import url_for
+from flask import escape
 
 name = ""
-city_names = ["city_1", "city_2"]
+city_names = ["city_1", "city_2","city_3", "city_4"]
 
 myapp_obj = Flask(__name__)
 
@@ -20,6 +21,10 @@ def home():
 		code = code + "<li>" + city # + "<li>"
 #		code = code + """</ul> </body>"""
 	return code
+
+@myapp_obj.route("/members/<string:name>/")
+def getMember(name):
+	return escape(name)
 
 @myapp_obj.route("/hello")
 def hello():
